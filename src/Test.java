@@ -12,13 +12,18 @@ public class Test {
         File file=new File();
         ReadeExcel readeExcel=new ReadeExcel();
         User user[]=readeExcel.readExcel(file);
+        int l=0;
         for(int i=0;i<user.length;i++){
             if(user[i].getUsername().equals(username)){
                 System.out.println("登录成功");
+                l=1;
             }
-            else{
-                System.out.println("登录失败");
-            }
+        }
+        if(l==1){
+            System.out.println("登录成功");
+        }
+        else {
+            System.out.println("登录失败");
         }
 
     }
