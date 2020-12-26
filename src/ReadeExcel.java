@@ -3,18 +3,16 @@ import org.apache.poi.xssf.usermodel.XSSFCell;
 import org.apache.poi.xssf.usermodel.XSSFRow;
 import org.apache.poi.xssf.usermodel.XSSFSheet;
 import org.apache.poi.xssf.usermodel.XSSFWorkbook;
-
 import java.io.File;
 import java.io.FileInputStream;
 import java.io.IOException;
-
-public class ReadExcel {
+public class ReadeExcel {
     public User[] readExcel(File file) {
         User users[] = null;
         try {
             XSSFWorkbook xw = new XSSFWorkbook(new FileInputStream(file));
             XSSFSheet xs = xw.getSheetAt(0);
-            users = new User[xs.getLastRowNum()];
+            users = new User[xs.getLastRowNum()];e
             for (int j = 1; j <= xs.getLastRowNum(); j++) {
                 XSSFRow row = xs.getRow(j);
                 User user = new User();//每循环一次就把电子表格的一行的数据给对象赋值
