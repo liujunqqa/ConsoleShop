@@ -12,7 +12,7 @@ public class ReadeExcel {
         try {
             XSSFWorkbook xw = new XSSFWorkbook(new FileInputStream(file));
             XSSFSheet xs = xw.getSheetAt(0);
-            users = new User[xs.getLastRowNum()];e
+            users = new User[xs.getLastRowNum()];
             for (int j = 1; j <= xs.getLastRowNum(); j++) {
                 XSSFRow row = xs.getRow(j);
                 User user = new User();//每循环一次就把电子表格的一行的数据给对象赋值
