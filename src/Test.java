@@ -25,6 +25,12 @@ public class Test {
                 ReadProductExcel readProductExcel=new ReadProductExcel();
                 InputStream k2 = Class.forName("Test").getResourceAsStream("/Product.xlsx");
                 Product[]products=readProductExcel.readProductExcel(k2);
+                for(int i=0;i<products.length;i++){
+                    System.out.print("商品id"+products[i].getId()+"/t");
+                    System.out.print("商品name"+products[i].getName()+"/t");
+                    System.out.print("商品price"+products[i].getPricr()+"/t");
+                    System.out.println("商品描述"+products[i].getMs()+"/t");
+                }
 
 
             } else {
