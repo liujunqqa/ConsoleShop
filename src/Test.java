@@ -22,6 +22,11 @@ public class Test {
             }
             if (l == 1) {
                 System.out.println("登录成功");
+                ReadProductExcel readProductExcel=new ReadProductExcel();
+                InputStream k2 = Class.forName("Test").getResourceAsStream("/Product.xlsx");
+                Product[]products=readProductExcel.readProductExcel(k2);
+
+
             } else {
                 System.out.println("登录失败");
             }
