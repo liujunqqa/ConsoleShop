@@ -11,7 +11,7 @@ public class Test {
         String password=in.next();
         System.out.println("你输入的密码为："+password);
         /*File file=new File("C:\\Users\\lenovo\\IdeaProjects\\ConsoleShop\\src\\1.xlsx");**/
-        InputStream kl=Class.forName("Test").getResourceAsStream("/1.xlsx");
+        InputStream kl=Class.forName("Test").getResourceAsStream("/User.xlsx");
         ReadeExcel readeExcel=new ReadeExcel();
         User user[]=readeExcel.readExcel(kl);
         int l=0;
