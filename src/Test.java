@@ -8,7 +8,7 @@ public class Test {
         System.out.println("你输入的用户名为："+username);
         System.out.println("请输入密码");
         String password=in.next();
-        System.out.println("你输入的用户名为："+password);
+        System.out.println("你输入的密码为："+password);
         File file=new File("C:\\Users\\lenovo\\IdeaProjects\\ConsoleShop\\src\\1.xlsx");
         ReadeExcel readeExcel=new ReadeExcel();
         User user[]=readeExcel.readExcel(file);
