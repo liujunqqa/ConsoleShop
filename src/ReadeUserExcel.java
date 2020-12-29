@@ -9,7 +9,7 @@ import java.io.IOException;
 import java.io.InputStream;
 import java.text.DecimalFormat;
 
-public class ReadeExcel {
+public class ReadeUserExcel {
     public User[] readExcel(InputStream kl) {
         User users[] = null;
         try {
