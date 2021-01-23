@@ -9,7 +9,7 @@ import java.text.SimpleDateFormat;
 import java.util.Scanner;
 public class Test {
     public static void main(String []args) throws ClassNotFoundException {
-        int l = 0;
+        int l = 0;//标记循环条件
         int userlocal = 0;
         while(l==0) {
             System.out.println("请输入用户名");
@@ -120,41 +120,41 @@ public class Test {
                 HSSFCell cell01 = row.createCell((short)i);
                 cell01.setCellValue(kk[i]);
             }
-            HSSFRow row1 = sheet.createRow((short) 1);
-            for(int j=0;j<6;j++) {
-                HSSFCell cell01 = row1.createCell((short)j);
-                if(j==0) {
-                    cell01.setCellValue(order.getUser().getUsername());
-                }
-                else if(j==1) {
+            for(int k=0;k<count;k++) {
+                HSSFRow row1 = sheet.createRow((short) k+1);
+                for (int j = 0; j < 6; j++) {
+                    HSSFCell cell01 = row1.createCell((short) j);
+                    if (j == 0) {
+                        cell01.setCellValue(order.getUser().getUsername());
+                    } else if (j == 1) {
 
-                       String  bn = order.getProduct()[0].getId();
+                       /*String  bn = order.getProduct()[0].getId();
 
                     if (count>1){
                         for (int y = 1; y < count; y++) {
                             bn = bn +","+ order.getProduct()[y].getId() ;
                         }
                     }
-                    cell01.setCellValue(bn);
-                }
+                    cell01.setCellValue(bn);**/
+                        cell01.setCellValue(order.getProduct()[k].getId());
+                    } else if (j == 2) {
+                        //cell01.setCellValue(order.getCount(count));
+                        cell01.setCellValue(1);
 
-                else if(j==2) {
-                    cell01.setCellValue(order.getCount(count));
-                }
+                    } else if (j == 3) {
+                        //cell01.setCellValue(order.getSumpay(count));
+                        cell01.setCellValue(order.getProduct()[k].getPricr());
 
-                else if(j==3) {
-                    cell01.setCellValue(order.getSumpay(count));
+                    } else if (j == 4) {
+                        //cell01.setCellValue(order.getPayment(count));
+                        cell01.setCellValue(order.getProduct()[k].getPricr());
+                    } else if (j == 5) {
+                        SimpleDateFormat format = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
+                        String op = format.format(order.getDate());
+                        cell01.setCellValue(op);
+                    }
 
                 }
-                else if(j==4) {
-                    cell01.setCellValue(order.getPayment(count));
-                }
-                else if(j==5) {
-                    SimpleDateFormat format=new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");
-                    String op=format.format(order.getDate());
-                    cell01.setCellValue(op);
-                }
-
             }
             FileOutputStream fOut = new FileOutputStream(outputFile);
             workbook.write(fOut);
