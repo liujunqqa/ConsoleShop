@@ -1,12 +1,13 @@
 import java.text.SimpleDateFormat;
 import java.util.Date;
+import java.util.Map;
 
 public class Order {
    private User user;
    private Product product[];
-   private int count;
-   private float sumpay;
-   private float payment;
+   private Map<Integer,Integer> count;
+   private Map<Integer,Integer> sumpay;
+   private Map<Integer,Integer> payment;
    private Date date;
 
     public User getUser() {
@@ -25,36 +26,27 @@ public class Order {
         this.product = product;
     }
 
-    public int getCount(int count1) {
-        count=count1;
+    public Map<Integer, Integer> getCount() {
         return count;
     }
 
-    public void setCount(int count) {
+    public void setCount(Map<Integer, Integer> count) {
         this.count = count;
     }
 
-    public float getSumpay(int count) {
-        for (int i=0;i<count;i++){
-            sumpay=sumpay+product[i].getPricr();
-        }
-
+    public Map<Integer, Integer> getSumpay() {
         return sumpay;
-
     }
 
-    public void setSumpay(float sumpay) {
+    public void setSumpay(Map<Integer, Integer> sumpay) {
         this.sumpay = sumpay;
     }
 
-    public float getPayment(int count) {
-        for (int i=0;i<count;i++){
-            payment=payment+product[i].getPricr();
-        }
+    public Map<Integer, Integer> getPayment() {
         return payment;
     }
 
-    public void setPayment(float payment) {
+    public void setPayment(Map<Integer, Integer> payment) {
         this.payment = payment;
     }
 
@@ -62,7 +54,6 @@ public class Order {
         Date date=new Date();
         return date;
     }
-
     public void setDate(Date date) {
         this.date = date;
     }

@@ -1,7 +1,7 @@
 public class Product {
     private String id;
     private String name;
-    private Float pricr;
+    private float pricr;
     private  String ms;
 
     public String getId() {
@@ -20,11 +20,11 @@ public class Product {
         this.name = name;
     }
 
-    public Float getPricr() {
+    public float getPricr() {
         return pricr;
     }
 
-    public void setPricr(Float pricr) {
+    public void setPricr(float pricr) {
         this.pricr = pricr;
     }
 
